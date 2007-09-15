@@ -41,7 +41,7 @@
 
 Name:           maven-surefire
 Version:        1.5.3
-Release:        %mkrel 2.2.1
+Release:        %mkrel 2.2.2
 Epoch:          0
 Summary:        Test framework project
 License:        Apache Software License
@@ -94,8 +94,6 @@ Requires(postun):  jpackage-utils >= 0:1.7.2
 
 %if %{gcj_support}
 BuildRequires:          java-gcj-compat-devel
-Requires(post):         java-gcj-compat
-Requires(postun):       java-gcj-compat
 %endif
 
 %description
@@ -108,8 +106,6 @@ Requires:               maven-surefire = %{epoch}:%{version}-%{release}
 
 %if %{gcj_support}
 BuildRequires:          java-gcj-compat-devel
-Requires(post):         java-gcj-compat
-Requires(postun):       java-gcj-compat
 %endif
 
 %description booter
