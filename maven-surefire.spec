@@ -41,7 +41,7 @@
 
 Name:           maven-surefire
 Version:        1.5.3
-Release:        %mkrel 2.2.2
+Release:        %mkrel 2.2.3
 Epoch:          0
 Summary:        Test framework project
 License:        Apache Software License
@@ -71,7 +71,7 @@ BuildArch:      noarch
 BuildRequires:  ant
 BuildRequires:  ant-nodeps
 BuildRequires:  classworlds
-BuildRequires:  jpackage-utils >= 0:1.7.2
+BuildRequires:  java-rpmbuild >= 0:1.7.2
 BuildRequires:  junit >= 3.8.2
 BuildRequires:  plexus-utils
 
