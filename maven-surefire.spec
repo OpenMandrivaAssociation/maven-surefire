@@ -63,7 +63,6 @@ Source2:        %{name}-build.xml
 Source3:        %{name}-booter-build.xml
 Source4:        %{name}-jpp-depmap.xml
 
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 %if ! %{gcj_support}
 BuildArch:      noarch
