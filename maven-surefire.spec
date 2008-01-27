@@ -33,7 +33,7 @@
 
 # If you don't want to build with maven, and use straight ant instead,
 # give rpmbuild option '--without maven'
-
+%define _without_maven 1
 %define with_maven %{!?_without_maven:1}%{?_without_maven:0}
 %define without_maven %{?_without_maven:1}%{!?_without_maven:0}
 
@@ -276,7 +276,7 @@ plexus/utils \
 )
 CLASSPATH=$CLASSPATH:target/classes:target/test-classes
 pushd surefire-api
-ant -Dbuild.sysclasspath=only jar javadoc
+%{ant} -Dbuild.sysclasspath=only jar javadoc
 popd
 export CLASSPATH=$(build-classpath \
 plexus/archiver \
@@ -286,7 +286,7 @@ plexus/utils \
 CLASSPATH=$CLASSPATH:$(pwd)/surefire-api/target/surefire-api-%{version}.jar
 CLASSPATH=$CLASSPATH:target/classes:target/test-classes
 pushd surefire-booter
-ant -Dbuild.sysclasspath=only jar javadoc
+%{ant} -Dbuild.sysclasspath=only jar javadoc
 popd
 export CLASSPATH=$(build-classpath \
 junit \
@@ -294,7 +294,7 @@ junit \
 CLASSPATH=$CLASSPATH:$(pwd)/surefire-api/target/surefire-api-%{version}.jar
 CLASSPATH=$CLASSPATH:target/classes:target/test-classes
 pushd surefire-providers/surefire-junit
-ant -Dbuild.sysclasspath=only jar javadoc
+%{ant} -Dbuild.sysclasspath=only jar javadoc
 popd
 export CLASSPATH=$(build-classpath \
 junit4 \
@@ -302,7 +302,7 @@ junit4 \
 CLASSPATH=$CLASSPATH:$(pwd)/surefire-api/target/surefire-api-%{version}.jar
 CLASSPATH=$CLASSPATH:target/classes:target/test-classes
 pushd surefire-providers/surefire-junit4
-ant -Dbuild.sysclasspath=only jar javadoc
+%{ant} -Dbuild.sysclasspath=only jar javadoc
 popd
 export CLASSPATH=$(build-classpath \
 plexus/utils \
@@ -311,7 +311,7 @@ testng-jdk15 \
 CLASSPATH=$CLASSPATH:$(pwd)/surefire-api/target/surefire-api-%{version}.jar
 CLASSPATH=$CLASSPATH:target/classes:target/test-classes
 pushd surefire-providers/surefire-testng
-ant -Dbuild.sysclasspath=only jar javadoc
+%{ant} -Dbuild.sysclasspath=only jar javadoc
 popd
 export CLASSPATH=$(build-classpath \
 maven2/artifact \
@@ -331,7 +331,7 @@ version=2.3
 groupId=org.apache.maven.plugins
 artifactId=maven-surefire-plugin
 EOT
-ant -Dbuild.sysclasspath=only jar
+%{ant} -Dbuild.sysclasspath=only jar
 popd
 export CLASSPATH=$(build-classpath \
 maven2/artifact \
@@ -357,7 +357,7 @@ version=2.3
 groupId=org.apache.maven.plugins
 artifactId=maven-surefire-report-plugin
 EOT
-ant -Dbuild.sysclasspath=only jar
+%{ant} -Dbuild.sysclasspath=only jar
 popd
 %endif
 
