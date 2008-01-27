@@ -83,6 +83,7 @@ BuildRequires:  junit4
 BuildRequires:  plexus-archiver
 BuildRequires:  plexus-utils
 BuildRequires:  testng
+BuildRequires:  jakarta-commons-lang
 
 %if %{with_maven}
 BuildRequires:  maven2 
