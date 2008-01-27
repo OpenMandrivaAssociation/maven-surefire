@@ -41,7 +41,7 @@
 
 Name:           maven-surefire
 Version:        2.3
-Release:        %mkrel 1.0.2
+Release:        %mkrel 1.0.3
 Epoch:          0
 Summary:        Surefire is a test framework project
 License:        Apache Software License
@@ -79,7 +79,7 @@ BuildRequires:  classworlds
 BuildRequires:  jmock
 BuildRequires:  junit >= 3.8.2
 BuildRequires:  junit4
-#BuildRequires:  maven-shared-plugin-testing-harness
+BuildRequires:  maven-shared-plugin-testing-harness
 BuildRequires:  plexus-archiver
 BuildRequires:  plexus-utils
 BuildRequires:  testng
@@ -153,7 +153,6 @@ Requires:        testng
 %description testng
 %{summary}.
 
-%if %{with_maven}
 %package plugin
 Summary:         Maven2 Plugin for %{name}
 Group:           Development/Java
@@ -183,7 +182,6 @@ Provides:        maven2-plugin-surefire-report = %{epoch}:%{version}-%{release}
 
 %description report-plugin
 %{summary}.
-%endif
 
 %package javadoc
 Summary:        Javadoc for %{name} API
@@ -316,7 +314,6 @@ CLASSPATH=$CLASSPATH:target/classes:target/test-classes
 pushd surefire-providers/surefire-testng
 %{ant} -Dbuild.sysclasspath=only jar javadoc
 popd
-%if %{with_maven}
 export CLASSPATH=$(build-classpath \
 maven2/artifact \
 maven2/artifact-manager \
@@ -363,7 +360,6 @@ artifactId=maven-surefire-report-plugin
 EOT
 %{ant} -Dbuild.sysclasspath=only jar
 popd
-%endif
 %endif
 
 
@@ -412,7 +408,6 @@ install -m 644 surefire-providers/surefire-testng/target/surefire-testng-%{versi
 install -m 644 surefire-providers/surefire-testng/pom.xml \
     $RPM_BUILD_ROOT%{_datadir}/maven2/poms/JPP.maven-surefire-testng.pom
 
-%if %{with_maven}
 install -m 644 maven-surefire-plugin/target/maven-surefire-plugin-%{version}.jar \
     $RPM_BUILD_ROOT%{_datadir}/maven2/plugins/surefire-plugin-%{version}.jar
 %add_to_maven_depmap org.apache.maven.plugins maven-surefire-plugin %{version} JPP/maven2/plugins surefire-plugin
@@ -424,13 +419,11 @@ install -m 644 maven-surefire-report-plugin/target/maven-surefire-report-plugin-
 %add_to_maven_depmap org.apache.maven.plugins maven-surefire-report-plugin %{version} JPP/maven2/plugins surefire-report-plugin
 install -m 644 maven-surefire-report-plugin/pom.xml \
     $RPM_BUILD_ROOT%{_datadir}/maven2/poms/JPP.maven2.plugins-surefire-report-plugin.pom
-%endif
 
 (cd $RPM_BUILD_ROOT%{_javadir}/maven-surefire && for jar in *-%{version}*; do ln -sf ${jar} `echo $jar| sed  "s|-%{version}||g"`; done)
 (cd $RPM_BUILD_ROOT%{_javadir}/maven-surefire && ln -sf api.jar surefire.jar)
-%if %{with_maven}
 (cd $RPM_BUILD_ROOT%{_datadir}/maven2/plugins && for jar in *-%{version}*; do ln -sf ${jar} `echo $jar| sed  "s|-%{version}||g"`; done)
-%endif
+
 # javadoc
 
 install -d -m 755 $RPM_BUILD_ROOT%{_javadocdir}/%{name}-api-%{version}
@@ -510,7 +503,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root,-)
 %{_javadir}/maven-surefire/testng*
 
-%if %{with_maven}
 %files plugin
 %defattr(-,root,root,-)
 %dir %{_datadir}/maven2/plugins
@@ -520,7 +512,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root,-)
 %dir %{_datadir}/maven2/plugins
 %{_datadir}/maven2/plugins/surefire-report-plugin*
-%endif
 
 %files javadoc
 %defattr(-,root,root,-)
