@@ -184,35 +184,35 @@ Provides:        maven2-plugin-surefire-report = %{epoch}:%{version}-%{release}
 
 %package javadoc
 Summary:        Javadoc for %{name} API
-Group:          Development/Documentation
+Group:          Development/Java
 
 %description javadoc
 %{summary}.
 
 %package booter-javadoc
 Summary:        Javadoc for %{name} Booter
-Group:          Development/Documentation
+Group:          Development/Java
 
 %description booter-javadoc
 %{summary}.
 
 %package junit-javadoc
 Summary:        Javadoc for %{name} JUnit3 Runner
-Group:          Development/Documentation
+Group:          Development/Java
 
 %description junit-javadoc
 %{summary}.
 
 %package junit4-javadoc
 Summary:        Javadoc for %{name} JUnit4 Runner
-Group:          Development/Documentation
+Group:          Development/Java
 
 %description junit4-javadoc
 %{summary}.
 
 %package testng-javadoc
 Summary:        Javadoc for %{name} TestNG Runner
-Group:          Development/Documentation
+Group:          Development/Java
 
 %description testng-javadoc
 %{summary}.
