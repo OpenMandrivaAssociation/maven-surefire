@@ -41,7 +41,7 @@
 
 Name:           maven-surefire
 Version:        2.3
-Release:        %mkrel 1.0.1
+Release:        %mkrel 1.0.2
 Epoch:          0
 Summary:        Surefire is a test framework project
 License:        Apache Software License
@@ -118,7 +118,7 @@ Summary:         Booter for %{name}
 Group:           Development/Java
 Requires:        %{name} = %{epoch}:%{version}-%{release}
 Requires:        plexus-archiver
-Requires:        plexus-containers-component-api
+Requires:        plexus-container-default
 Requires:        plexus-utils
 
 %description booter
