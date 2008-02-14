@@ -46,6 +46,7 @@ Epoch:          0
 Summary:        Surefire is a test framework project
 License:        Apache Software License
 Group:          Development/Java
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 URL:            http://maven.apache.org/surefire/
 
 Source0:        %{name}-%{version}.tar.gz
