@@ -43,7 +43,7 @@ Name:           maven-surefire
 Version:        2.3
 Release:        %mkrel 1.0.5
 Epoch:          0
-Summary:        Surefire is a test framework project
+Summary:        Test framework project
 License:        Apache Software License
 Group:          Development/Java
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
