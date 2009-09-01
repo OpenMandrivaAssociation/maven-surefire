@@ -41,7 +41,7 @@
 
 Name:           maven-surefire
 Version:        2.3
-Release:        %mkrel 1.0.5
+Release:        %mkrel 1.0.6
 Epoch:          0
 Summary:        Test framework project
 License:        Apache Software License
