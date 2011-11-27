@@ -1,6 +1,6 @@
 Name:           maven-surefire
 Version:        2.7.2
-Release:        1
+Release:        3
 Summary:        Test framework project
 License:        ASL 2.0
 Group:          Development/Java
