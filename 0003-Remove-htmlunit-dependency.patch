@@ -1,0 +1,29 @@
+From 7f208bb9e3fe1e81c59e17ef08b14abe56ebd351 Mon Sep 17 00:00:00 2001
+From: Stanislav Ochotnicky <sochotnicky@redhat.com>
+Date: Mon, 7 Mar 2011 11:24:48 +0100
+Subject: [PATCH 3/3] Remove htmlunit dependency
+
+---
+ surefire-integration-tests/pom.xml |    6 ------
+ 1 files changed, 0 insertions(+), 6 deletions(-)
+
+diff --git a/surefire-integration-tests/pom.xml b/surefire-integration-tests/pom.xml
+index 5bc709f..91cbdf2 100644
+--- a/surefire-integration-tests/pom.xml
++++ b/surefire-integration-tests/pom.xml
+@@ -90,12 +90,6 @@
+       <artifactId>plexus-utils</artifactId>
+       <scope>test</scope>
+     </dependency>
+-      <dependency>
+-        <groupId>net.sourceforge.htmlunit</groupId>
+-        <artifactId>htmlunit</artifactId>
+-        <version>2.8</version>
+-        <scope>test</scope>
+-      </dependency>
+     <dependency>
+       <groupId>junit</groupId>
+       <artifactId>junit</artifactId>
+-- 
+1.7.4
+
