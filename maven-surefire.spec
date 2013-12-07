@@ -1,7 +1,7 @@
 Summary:	Test framework project
 Name:		maven-surefire
 Version:	2.7.2
-Release:	4
+Release:	5
 License:	ASL 2.0
 Group:		Development/Java
 Url:		http://maven.apache.org/surefire/
