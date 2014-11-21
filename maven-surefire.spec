@@ -1,6 +1,6 @@
 %{?_javapackages_macros:%_javapackages_macros}
 Name:           maven-surefire
-Version:        2.16
+Version:        2.17
 Release:        1.2%{?dist}
 Epoch:          0
 Summary:        Test framework project
