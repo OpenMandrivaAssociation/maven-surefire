@@ -5,7 +5,7 @@ Release:        1.2%{?dist}
 Epoch:          0
 Summary:        Test framework project
 License:        ASL 2.0 and CPL
-URL:            http://maven.apache.org/surefire/
+URL:            https://maven.apache.org/surefire/
 Source0:        http://repo2.maven.org/maven2/org/apache/maven/surefire/surefire/%{version}/surefire-%{version}-source-release.zip
 Source2:        http://junit.sourceforge.net/cpl-v10.html
 BuildArch:      noarch
