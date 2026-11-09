@@ -1,2 +1,4 @@
 sources:
+  surefire-3.6.1.tar.gz: 839d22fa5e25a5a5bdce3c3cf6909644ec37631b
+removed_sources:
   surefire-2.17-source-release.zip: 3d4357520c14b72daaed6b79beca576b2dfd004f
